@@ -1,4 +1,4 @@
-/**
+ /**
  * GrowLight 24 hour cycle using Common Cathode RGB LEDs
  *
  * This file and supporting library files can be found at:
@@ -85,21 +85,19 @@ void quickComplements() {
   led_rgb1.setColor(Color::MAGENTA);
   delay(DURATION_BLINK);    
  
-  led_rgb1.setColor(Color::WHITE);
+  led_rgb1.setColor(Color::RGB_WHITE);
   delay(DURATION_BLINK);       
 }
 
 void waitUntil(RTC_DS3231 clock, int hours, int minutes) {
-}
-
-    DateTime now = rtc.now();
+    DateTime now = clock.now();
 
     #ifdef DEBUG
     Serial.print(now.hour(), DEC);
     Serial.print(':');
     Serial.print(now.minute(), DEC);
     #endif
-
+}
 
 void loop() {
   // Dawn  at 06:00
@@ -123,19 +121,19 @@ void loop() {
   // Bright light at 10:00
   waitUntil(rtc, 10, 00);
   quickComplements();
-  led_rgb1.setColor(Color::WHITE);
+  led_rgb1.setColor(Color::RGB_WHITE);
   led_rgb2.setColor(Color::CYAN);
    
   // Full light at 10:30
   waitUntil(rtc, 10, 30);
   quickComplements();
-  led_rgb1.setColor(Color::WHITE);
-  led_rgb2.setColor(Color::WHITE);
+  led_rgb1.setColor(Color::RGB_WHITE);
+  led_rgb2.setColor(Color::RGB_WHITE);
    
   // Reduced light at 14:00
   waitUntil(rtc, 14, 30);
   quickComplements();
-  led_rgb1.setColor(Color::WHITE);
+  led_rgb1.setColor(Color::RGB_WHITE);
   led_rgb2.setColor(Color::YELLOW);
   
   // Afternoon light at 14:30
