@@ -55,6 +55,16 @@ void setup() {
   led_rgb1.test();
   led_rgb1.setColor(Color::NONE);
 
+  led_rgb2.setColor(Color::RED);
+  delay(500);
+  led_rgb2.setColor(Color::GREEN);
+  delay(500);
+  led_rgb2.setColor(Color::BLUE);
+  delay(500);
+
+  led_rgb2.test();
+  led_rgb2.setColor(Color::NONE);
+
   #ifdef DEBUG
   Serial.println("</Setup>");
   #endif
