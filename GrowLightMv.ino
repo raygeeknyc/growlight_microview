@@ -136,16 +136,16 @@ void displayLightLevel(float total_light_level) {
 void displayUntil(RTC_DS3231 clock, int at_hour, int at_minute, float light_level) {
 DateTime now = clock.now();
 
-uView.clear(PAGE);
+  uView.clear(PAGE);
 
-while (now.hour() < at_hour) {
+  while (now.hour() < at_hour) {
     now = clock.now();
     displayTime(now, at_hour, at_minute);
     displayLightLevel(light_level);
     delay(DELAY_MINUTE);
   }
   if (now.hour() == at_hour) {
-    while (now.minute() <= at_minute) {
+    while (now.minute() < at_minute || at_minute == 0) {
       now = clock.now();
       displayTime(now, at_hour, at_minute);
       displayLightLevel(light_level);
