@@ -109,7 +109,7 @@ void displayTime(DateTime now, int at_hour, int at_minute) {
     uView.print(":");
     sprintf(display_time,"%02d", now.minute());
     uView.println(display_time);
-    uView.print(" to ");
+    uView.print(" to: ");
     sprintf(display_time,"%02d", at_hour);
     uView.print(display_time);
     uView.print(":");
