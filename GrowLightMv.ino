@@ -145,7 +145,7 @@ DateTime now = clock.now();
     delay(DELAY_MINUTE);
   }
   if (now.hour() == at_hour) {
-    while (now.minute() < at_minute || at_minute == 0) {
+    while ((now.minute() < at_minute) || (now.minute() == 0 && at_minute == 0)) {
       now = clock.now();
       displayTime(now, at_hour, at_minute);
       displayLightLevel(light_level);
