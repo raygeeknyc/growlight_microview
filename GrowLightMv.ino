@@ -2,7 +2,7 @@
   GrowLight 24 hour cycle using Common Cathode RGB LEDs
 
   This file and supporting library files can be found at:
-  http://www.insanegiantrobots.com/arduino/RgbLed.zip
+  http:/github.com/raygeeknyc/growlightmv
 
   @author("Raymond Blum" <raymond@insanegiantrobots.com>)
 **/
